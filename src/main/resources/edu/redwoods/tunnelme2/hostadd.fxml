@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="edu.redwoods.tunnelme2.AddHostController">
+  <panes>
+    <TitledPane animated="false" text="Hostname or IP">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="149.0" layoutY="12.0" prefHeight="224.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="tbHostname" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+         <font>
+            <Font size="18.0" />
+         </font>
+    </TitledPane>
+    <TitledPane animated="false" text="Port">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="149.0" layoutY="12.0" prefHeight="224.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="tbPort" text="22" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+         <font>
+            <Font size="18.0" />
+         </font>
+    </TitledPane>
+    <TitledPane animated="false" text="Authentication">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="149.0" layoutY="12.0" prefHeight="224.0" prefWidth="398.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Label text="Username">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tbUsername" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                           <children>
+                              <Label text="Password">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="tbPassword" />
+                           </children>
+                        </HBox>
+                        <CheckBox fx:id="cbUseKey" mnemonicParsing="false" onAction="#enableKeyTextFields" text="Use Public / Private Keypair">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </CheckBox>
+                        <TextField fx:id="tbKeyPath" disable="true" promptText="Path to OpenSSH formatted Private Key File" />
+                        <TextField fx:id="tbPubKeyPath" disable="true" promptText="Path to OpenSSH formatted Public Key File" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+         <font>
+            <Font size="18.0" />
+         </font>
+    </TitledPane>
+      <TitledPane animated="false" layoutX="10.0" layoutY="80.0" text="Port Forwarding">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="149.0" layoutY="12.0" prefHeight="224.0" prefWidth="398.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Label text="Hostname    ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tbPortFwdRHost" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" spacing="10.0">
+                           <children>
+                              <Label text="Local Port     ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tbPortFwdLPort" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="49.0" spacing="10.0">
+                           <children>
+                              <Label text="Remote Port">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tbPortFwdRPort" />
+                           </children>
+                        </HBox>
+                        <CheckBox fx:id="cbPortFwdRev" mnemonicParsing="false" text="Reverse">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="10.0" layoutY="115.0" text="Confirm">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="149.0" layoutY="12.0" prefHeight="224.0" prefWidth="398.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="btnCheckConnection" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#checkConnection" text="Check Connection">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSaveHost" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#saveHost" text="Save Tunnel">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TitledPane>
+  </panes>
+</Accordion>
